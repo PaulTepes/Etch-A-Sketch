@@ -12,7 +12,11 @@
 .cell {
   display: flex;
   border: 1px solid black;
-  background-color: rgb(253, 217, 163);
+  background-color: rgb(247, 247, 247);
   width: calc(100% / 16);
   height: 6.25vh;
+}
+
+.hovered-cell {
+  background-color: aqua;
 }

@@ -6,4 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     cell.classList.add("cell");
     mainContainer.appendChild(cell);
   }
+
+  let cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) =>
+    cell.addEventListener("mouseover", () => {
+      cell.classList.add("hovered-cell");
+    })
+  );
 });

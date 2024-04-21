@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let newGridButton = document.querySelector("#new-grid");
   let resetButton = document.querySelector("#reset");
   let gridSize = 16;
-
+  document.documentElement.style.setProperty("--jsnumber", gridSize);
   makeGrid(gridSize);
   hoverCells();
 
   resetButton.addEventListener("click", () => {
     removeAllChildren(mainContainer);
     gridSize = 16;
+    document.documentElement.style.setProperty("--jsnumber", gridSize);
     makeGrid(gridSize);
     // hoverCells();
   });
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   newGridButton.addEventListener("click", () => {
     gridSize = prompt("Enter grid size from 1 to 100", "100");
     removeAllChildren(mainContainer);
+    document.documentElement.style.setProperty("--jsnumber", gridSize);
     makeGrid(gridSize);
   });
 
@@ -25,14 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
       parent.removeChild(parent.firstChild);
     }
   }
-
   function makeGrid(gridSize) {
     for (let i = 1; i <= gridSize ** 2; i++) {
       let cell = document.createElement("div");
       cell.classList.add("cell");
       mainContainer.appendChild(cell);
-      hoverCells();
     }
+    hoverCells();
   }
 });
 let rgbButton = document.querySelector("#rgb-switcher");

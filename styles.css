@@ -12,8 +12,11 @@
   display: flex;
   border: 1px solid black;
   background-color: rgb(247, 247, 247);
-  width: calc(100% / 16);
-  height: 5vh;
+  width: 50px;
+  width: calc(100% / var(--jsnumber));
+  height: calc(80vh / var(--jsnumber));
+  /* width: calc(100% / 16);
+  height: 5vh; */
 }
 
 .hovered-cell {
@@ -31,8 +34,4 @@
 .button {
   width: 100px;
   height: 30px;
-}
-
-.hovered-cell-rgb {
-  background-color: aqua;
 }
